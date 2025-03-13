@@ -1,0 +1,3 @@
+[submodule "EasySchedule/clogger"]
+	path = EasySchedule/clogger
+	url = https://github.com/metaone01/clogger.git
