@@ -1,7 +1,7 @@
 #pragma once
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QWidget>
-#include "../CustomControl/TabControl.h"
+#include "../CustomControl/TabControl.hpp"
     
 class MainWindowView : public QMainWindow
 {

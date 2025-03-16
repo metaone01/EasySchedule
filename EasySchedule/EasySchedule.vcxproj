@@ -12,38 +12,34 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CustomControl\Expander.cpp" />
-    <ClCompile Include="CustomControl\ListBox.cpp" />
-    <ClCompile Include="CustomControl\TabControl.cpp" />
     <ClCompile Include="EasySchedule.cpp" />
     <ClCompile Include="Model\CustomDataStructures.cpp" />
     <ClCompile Include="Model\DataModel.cpp" />
     <ClCompile Include="sqlite3.c" />
     <ClCompile Include="UnitTest\ConverterTest.h" />
     <ClCompile Include="UnitTest\ScheduleViewModelTest.h" />
-    <ClCompile Include="View\AllScheduleView.cpp" />
     <ClCompile Include="View\ConfigView.cpp" />
     <ClCompile Include="View\MainWindowView.cpp" />
     <ClCompile Include="View\NewScheduleView.cpp" />
-    <ClCompile Include="View\SingleScheduleView.cpp" />
-    <ClCompile Include="View\TodayScheduleView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clogger\logger.h" />
     <ClInclude Include="Converter\serializer.h" />
+    <ClInclude Include="CustomControl\QListBox.hpp" />
     <ClInclude Include="CustomControl\Expander.h" />
-    <ClInclude Include="CustomControl\ListBox.h" />
-    <ClInclude Include="CustomControl\TabControl.h" />
+    <ClInclude Include="CustomControl\TabControl.hpp" />
     <ClInclude Include="Model\CustomDataStructures.h" />
     <ClInclude Include="Model\DataModel.h" />
     <ClInclude Include="sqlite3.h" />
     <ClInclude Include="ViewModel\ScheduleViewModel.cpp" />
     <ClInclude Include="ViewModel\ScheduleViewModel.h" />
-    <ClInclude Include="View\AllScheduleView.h" />
+    <ClInclude Include="View\AllScheduleView.hpp" />
     <ClInclude Include="View\ConfigView.h" />
     <ClInclude Include="View\MainWindowView.h" />
     <ClInclude Include="View\NewScheduleView.h" />
+    <ClInclude Include="View\SingleScheduleView.cpp" />
     <ClInclude Include="View\SingleScheduleView.h" />
-    <ClInclude Include="View\TodayScheduleView.h" />
+    <ClInclude Include="View\TodayScheduleView.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="clogger\.git" />

@@ -2,7 +2,8 @@
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QPushButton>
 
-class Expander : public QWidget {
+class Expander : public QWidget
+{
     Q_OBJECT private:
     QVBoxLayout* _layout;
     QPushButton* _header;

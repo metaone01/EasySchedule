@@ -1,16 +1,15 @@
 ﻿#include "Expander.h"
 
 Expander::Expander(QWidget* parent, const std::string& header, QWidget* content) : QWidget{parent},
-    _layout{new QVBoxLayout(this)},
-    _header{new QPushButton(this)},
+    _layout{new QVBoxLayout()},
+    _header{new QPushButton()},
     _content{content} {
     _header->setText(header.data());
     _layout->addWidget(_header);
     _layout->addWidget(_content);
     _content->hide();
     setConnection();
-    _layout->setAlignment(Qt::AlignTop);
-    parent->setLayout(_layout);
+    this->setLayout(_layout);
 }
 
 void Expander::setConnection() {

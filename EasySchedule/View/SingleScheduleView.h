@@ -6,6 +6,7 @@
 #include "../ViewModel/ScheduleViewModel.h"
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QTextEdit>
+#include "../CustomControl/QListBox.hpp"
 
 class SingleScheduleView : public Expander {
 private:
@@ -15,9 +16,10 @@ private:
     QDateTimeEdit* _begin;
     QDateTimeEdit* _end;
     QTextEdit* _description;
+    QPushButton* _finished;
     QPushButton* _delete;
 public:
-    explicit SingleScheduleView(QWidget* parent, ScheduleViewModel* view_model);
-    ScheduleViewModel* getViewModel() const;
+    explicit SingleScheduleView(QListBox<SingleScheduleView>* parent, ScheduleViewModel* view_model);
+    [[nodiscard]] ScheduleViewModel* getViewModel() const;
     ~SingleScheduleView() override;
 };

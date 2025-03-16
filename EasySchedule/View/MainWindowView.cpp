@@ -1,8 +1,8 @@
 #include "MainWindowView.h"
-#include "AllScheduleView.h"
+#include "AllScheduleView.hpp"
 #include "ConfigView.h"
 #include "NewScheduleView.h"
-#include "TodayScheduleView.h"
+#include "TodayScheduleView.hpp"
 
 MainWindowView::MainWindowView(QWidget* parent) : QMainWindow{parent} {
     _content_presenter = new TabControl();

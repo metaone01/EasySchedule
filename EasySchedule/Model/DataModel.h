@@ -15,7 +15,6 @@ class DataModel {
     static sqlite3* _db;
 
 public:
-
     static bool is_initialized;
     static bool is_error;
     static bool is_terminated;
@@ -29,6 +28,7 @@ public:
         debug("Parse complete.");
         return 0;
     }
+
     [[nodiscard]] static bool initialize();
 
     [[nodiscard]] static bool ensureDatabaseExists();
@@ -38,8 +38,8 @@ public:
     template <typename T>
     static std::vector<T*>* read(const table& _table = table_name,
                                  const Range& limit = Range::zero,
-                                 const std::vector<std::pair<const std::string&, const Sort&>>& sorts = std::vector<
-                                     std::pair<const std::string&, const Sort&>>()) {
+                                 const std::vector<std::string>& conditions = {},
+                                 const std::vector<std::pair<std::string, Sort>>& sorts = {}) {
         std::vector<T*>* result = new std::vector<T*>();
         std::string command = "SELECT * FROM " + _table;
         if (limit != Range::zero) {
@@ -48,18 +48,28 @@ public:
                 command += " LIMIT " + std::to_string(limit.begin) + ", " + std::to_string(
                     std::get<unsigned>(limit.end));
         }
+        if (!conditions.empty()) {
+            command += " WHERE ";
+            for (std::string condition : conditions) { command += condition + " AND "; }
+            command = command.substr(0, command.size() - 5);
+        }
         if (!sorts.empty()) {
             command += " ORDER BY ";
-            for (std::pair sort : sorts) { command += sort.first + (sort.second == asc ? "ASC" : "DESC") + ", "; }
-            command.pop_back();
+            for (std::pair sort : sorts) {
+                command += sort.first + " " + (sort.second == asc ? "ASC" : "DESC") + " , ";
+            }
+            command = command.substr(0, command.size() - 3);
         }
+        command += ";";
+        debug("Order: " + command);
         sqlite3_exec(_db, command.data(), parseData<T>, result, nullptr);
         return result;
     }
 
-    static void save(const ScheduleViewModel &_schedule, const table &_table = table_name);
-    static void update(const ScheduleViewModel &_schedule, const table &_table = table_name);
-    static void remove(const ScheduleViewModel &_schedule, const table &_table = table_name);
+    static void save(const ScheduleViewModel& _schedule, const table& _table = table_name);
+    static void update(const ScheduleViewModel& _schedule, const table& _table = table_name);
+    static void remove(const ScheduleViewModel& _schedule, const table& _table = table_name);
+
     static void dispose() {
         is_terminated = true;
         is_initialized = false;

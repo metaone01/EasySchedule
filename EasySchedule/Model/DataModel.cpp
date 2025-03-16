@@ -86,7 +86,7 @@ void DataModel::update(const ScheduleViewModel &_schedule, const table &_table)
     if (!alarm_str.empty()) alarm_str.pop_back();
     info(command);
     debug("Preparation complete.");
-    command += "'" + alarm_str + "',Description'" + _schedule.description + "',IsFinished="+(_schedule.is_finished?"1":"0")+" WHERE Title='" + _schedule.title + "';";
+    command += "'" + alarm_str + "',Description='" + _schedule.description + "',IsFinished="+(_schedule.is_finished?"1":"0")+" WHERE Title='" + _schedule.title + "';";
     info(command);
     char* err = nullptr;
     sqlite3_exec(_db, command.data(), nullptr, nullptr, &err);

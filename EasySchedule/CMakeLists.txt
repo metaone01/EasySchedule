@@ -16,7 +16,7 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets PATHS G:/Qt6/6.8.2/mingw_6
 # set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 # find_package(SQLite3 REQUIRED)
 qt_standard_project_setup()
-file(GLOB_RECURSE FILES CONFIGURE_DEPENDS *.cpp *.h)
+file(GLOB_RECURSE FILES CONFIGURE_DEPENDS *.cpp *.h *.hpp)
 set(SQLITE_SOURCES ${PROJECT_SOURCE_DIR}/sqlite3.c)
 set_source_files_properties(${SQLITE_SOURCES} PROPERTIES LANGUAGE C)
 set(FILES ${FILES} ${SQLITE_SOURCES})

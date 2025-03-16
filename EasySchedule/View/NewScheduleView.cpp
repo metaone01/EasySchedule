@@ -45,6 +45,8 @@ void NewScheduleView::initSave() {
                                           _end->dateTime(),
                                           std::vector<QDateTime>{},
                                           _description->toPlainText().toStdString()));
+        _title->clear();
+        _description->clear();
     });
 }
 

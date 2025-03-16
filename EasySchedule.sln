@@ -8,20 +8,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EasySchedule", "EasySchedul
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Release|x64 = Release|x64
-		MinSizeRel|x64 = MinSizeRel|x64
-		RelWithDebInfo|x64 = RelWithDebInfo|x64
+		Debug x64|Any CPU = Debug x64|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AC4C4D95-D347-3F8E-9D1C-41C6EAABDB5E}.Debug|x64.ActiveCfg = Debug|x64
-		{AC4C4D95-D347-3F8E-9D1C-41C6EAABDB5E}.Debug|x64.Build.0 = Debug|x64
-		{AC4C4D95-D347-3F8E-9D1C-41C6EAABDB5E}.Release|x64.ActiveCfg = Release|x64
-		{AC4C4D95-D347-3F8E-9D1C-41C6EAABDB5E}.Release|x64.Build.0 = Release|x64
-		{AC4C4D95-D347-3F8E-9D1C-41C6EAABDB5E}.MinSizeRel|x64.ActiveCfg = MinSizeRel|x64
-		{AC4C4D95-D347-3F8E-9D1C-41C6EAABDB5E}.MinSizeRel|x64.Build.0 = MinSizeRel|x64
-		{AC4C4D95-D347-3F8E-9D1C-41C6EAABDB5E}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
-		{AC4C4D95-D347-3F8E-9D1C-41C6EAABDB5E}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
+		{AC4C4D95-D347-3F8E-9D1C-41C6EAABDB5E}.Debug x64|Any CPU.ActiveCfg = Debug|x64
+		{AC4C4D95-D347-3F8E-9D1C-41C6EAABDB5E}.Debug x64|Any CPU.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
