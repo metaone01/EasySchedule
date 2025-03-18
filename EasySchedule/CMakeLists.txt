@@ -11,7 +11,7 @@ project(EasySchedule LANGUAGES C CXX)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
-find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets PATHS G:/Qt6/6.8.2/mingw_64/lib/cmake)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets)
 # find_package(GTest REQUIRED PATHS G:/googletest-1.16.0/googletest/cmake)
 # set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 # find_package(SQLite3 REQUIRED)
@@ -30,6 +30,7 @@ target_link_libraries(EasySchedule
     PRIVATE
         Qt6::Core
         Qt6::Widgets
+        Qt6::Gui
 )
 include(GNUInstallDirs)
 
@@ -45,3 +46,9 @@ qt_generate_deploy_app_script(
     NO_UNSUPPORTED_PLATFORM_ERROR
 )
 install(SCRIPT ${deploy_script})
+
+add_custom_command(TARGET EasySchedule POST_BUILD
+    COMMAND ${Qt6_DIR}/../../../bin/windeployqt.exe
+    $<TARGET_FILE:EasySchedule>
+    COMMENT "Deploying Qt runtime libraries..."
+)
